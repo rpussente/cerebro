@@ -159,22 +159,22 @@ Single unified resource with filtering:
 
 ---
 
-## Phase 1: Scaffolding + Data Layer
+## Phase 1: Scaffolding + Data Layer ✅
 
-- [ ] Root `package.json` with npm workspaces (`client`, `server`, `shared`)
-- [ ] `tsconfig.base.json` with shared TypeScript config
-- [ ] `.gitignore` (node_modules, dist, data/)
-- [ ] `shared/types.ts` — `Item` discriminated union (TaskItem | IdeaItem | JournalItem)
-- [ ] `shared/package.json`
-- [ ] `server/package.json` with dependencies
-- [ ] `server/tsconfig.json`
-- [ ] `server/src/index.ts` — Express app with health check, data dir init
-- [ ] `server/src/services/itemStore.ts` — CRUD on `data/items/*.md` using `gray-matter`
-- [ ] `server/src/routes/items.ts` — Unified item REST endpoints with filtering
-- [ ] Scaffold `client/` via `npm create vite@latest`
-- [ ] `client/vite.config.ts` — Proxy `/api` and `/ws` to Express
-- [ ] Root `dev` script using `concurrently` to run both
-- [ ] **Verify**: `npm run dev` → `curl localhost:3001/api/items` returns `[]`, client loads at `:5173`
+- [x] Root `package.json` with npm workspaces (`client`, `server`, `shared`)
+- [x] `tsconfig.base.json` with shared TypeScript config
+- [x] `.gitignore` (node_modules, dist, data/)
+- [x] `shared/types.ts` — `Item` discriminated union (TaskItem | IdeaItem | JournalItem)
+- [x] `shared/package.json`
+- [x] `server/package.json` with dependencies
+- [x] `server/tsconfig.json`
+- [x] `server/src/index.ts` — Express app with health check, data dir init
+- [x] `server/src/services/itemStore.ts` — CRUD on `data/items/*.md` using `gray-matter`
+- [x] `server/src/routes/items.ts` — Unified item REST endpoints with filtering
+- [x] Scaffold `client/` via `npm create vite@latest`
+- [x] `client/vite.config.ts` — Proxy `/api` and `/ws` to Express
+- [x] Root `dev` script using `concurrently` to run both
+- [x] **Verify**: `npm run dev` → `curl localhost:3001/api/items` returns `[]`, client loads at `:5173`
 
 ## Phase 2: Task Board + Ideas UI
 
