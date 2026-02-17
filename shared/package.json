@@ -1,0 +1,14 @@
+{
+  "name": "@cerebro/shared",
+  "private": true,
+  "version": "0.0.1",
+  "type": "module",
+  "main": "./types.ts",
+  "types": "./types.ts",
+  "scripts": {
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.0"
+  }
+}
