@@ -208,7 +208,7 @@ Single unified resource with filtering:
 - [x] `client/src/components/terminal/TerminalPanel.tsx` — xterm.js container
 - [x] `client/src/components/terminal/SessionPicker.tsx` — Dropdown to pick active session
 - [x] "Delegate" button on TaskCard that triggers delegation flow
-- [ ] **Verify**: Delegate task → tmux spawns → embedded terminal shows Claude → can type in it
+- [x] **Verify**: Delegate task → tmux spawns → embedded terminal shows Claude → can type in it
 
 ## Phase 5: Polish
 
