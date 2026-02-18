@@ -195,7 +195,7 @@ Single unified resource with filtering:
 - [x] `client/src/components/journal/JournalEditor.tsx` — Markdown textarea + live preview
 - [x] `client/src/components/journal/JournalList.tsx` — Timeline view with search/tag filter
 - [x] `client/src/components/journal/JournalEntry.tsx` — Render single markdown entry
-- [ ] **Verify**: Create journal entries, search works, markdown renders, timeline sorts by date
+- [x] **Verify**: Create journal entries, search works, markdown renders, timeline sorts by date
 
 ## Phase 4: tmux + Terminal
 
