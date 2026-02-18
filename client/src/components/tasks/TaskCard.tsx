@@ -5,6 +5,7 @@ interface Props {
   onStatusChange: (id: string, status: TaskStatus) => void;
   onEdit: (task: TaskItem) => void;
   onDelete: (id: string) => void;
+  onDelegate: (id: string) => void;
 }
 
 const statusTransitions: Record<TaskStatus, TaskStatus[]> = {
@@ -14,7 +15,9 @@ const statusTransitions: Record<TaskStatus, TaskStatus[]> = {
   done: ["backlog"],
 };
 
-export default function TaskCard({ task, onStatusChange, onEdit, onDelete }: Props) {
+export default function TaskCard({ task, onStatusChange, onEdit, onDelete, onDelegate }: Props) {
+  const canDelegate = task.status === "backlog";
+
   return (
     <div
       style={{
@@ -26,6 +29,11 @@ export default function TaskCard({ task, onStatusChange, onEdit, onDelete }: Pro
       }}
     >
       <div style={{ fontWeight: 600, marginBottom: "0.25rem" }}>{task.title}</div>
+      {task.tmuxSession && (
+        <div style={{ fontSize: "0.75rem", color: "#8c8", marginBottom: "0.25rem" }}>
+          session: {task.tmuxSession}
+        </div>
+      )}
       {task.body && (
         <div style={{ fontSize: "0.85rem", color: "#aaa", marginBottom: "0.5rem" }}>
           {task.body.slice(0, 120)}
@@ -50,6 +58,22 @@ export default function TaskCard({ task, onStatusChange, onEdit, onDelete }: Pro
         </div>
       )}
       <div style={{ display: "flex", gap: 4, flexWrap: "wrap" }}>
+        {canDelegate && (
+          <button
+            onClick={() => onDelegate(task.id)}
+            style={{
+              fontSize: "0.75rem",
+              padding: "2px 8px",
+              border: "1px solid #585",
+              borderRadius: 4,
+              background: "transparent",
+              color: "#8c8",
+              cursor: "pointer",
+            }}
+          >
+            Delegate
+          </button>
+        )}
         {statusTransitions[task.status].map((s) => (
           <button
             key={s}

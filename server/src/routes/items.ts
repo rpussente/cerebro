@@ -1,6 +1,7 @@
 import { Router } from "express";
 import type { Item, ItemFilters, ItemKind, TaskStatus } from "../../../shared/types.js";
 import { listItems, getItem, createItem, updateItem, deleteItem } from "../services/itemStore.js";
+import { delegateTask } from "../services/tmuxManager.js";
 
 const router = Router();
 
@@ -67,6 +68,25 @@ router.post("/:id/promote", async (req, res) => {
     status: "backlog",
   } as Partial<Omit<Item, "id" | "createdAt">>);
   res.json(promoted);
+});
+
+router.post("/:id/delegate", async (req, res) => {
+  const item = await getItem(req.params.id);
+  if (!item) {
+    res.status(404).json({ error: "Item not found" });
+    return;
+  }
+  if (item.kind !== "task") {
+    res.status(400).json({ error: "Only tasks can be delegated" });
+    return;
+  }
+  const prompt = item.body || item.title;
+  const sessionName = await delegateTask(item.id, prompt);
+  const updated = await updateItem(req.params.id, {
+    status: "delegated",
+    tmuxSession: sessionName,
+  } as Partial<Omit<Item, "id" | "createdAt">>);
+  res.json(updated);
 });
 
 export default router;
