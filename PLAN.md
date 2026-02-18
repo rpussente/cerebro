@@ -176,19 +176,19 @@ Single unified resource with filtering:
 - [x] Root `dev` script using `concurrently` to run both
 - [x] **Verify**: `npm run dev` → `curl localhost:3001/api/items` returns `[]`, client loads at `:5173`
 
-## Phase 2: Task Board + Ideas UI
+## Phase 2: Task Board + Ideas UI ✅
 
-- [ ] `client/src/api/items.ts` — Typed fetch wrappers (list with filters, get, create, update, delete)
-- [ ] `client/src/components/Layout.tsx` — Sidebar nav (Tasks, Ideas, Journal, Terminal)
-- [ ] `client/src/App.tsx` — React Router setup with routes
-- [ ] `client/src/components/tasks/TaskBoard.tsx` — Columns: Backlog, In Progress, Done (filtered by kind=task)
-- [ ] `client/src/components/tasks/TaskCard.tsx` — Task display with status change buttons
-- [ ] `client/src/components/tasks/TaskForm.tsx` — Create/edit task modal
-- [ ] `client/src/components/ideas/IdeaList.tsx` — List items where kind=idea
-- [ ] `client/src/components/ideas/IdeaCard.tsx` — Single idea display
-- [ ] `client/src/components/ideas/IdeaForm.tsx` — Create/edit idea
-- [ ] "Promote to Task" action — calls `POST /api/items/:id/promote`
-- [ ] **Verify**: Create/edit/delete tasks and ideas through the UI, refresh to confirm persistence. Open a file in external editor, change it, refresh UI to see update.
+- [x] `client/src/api/items.ts` — Typed fetch wrappers (list with filters, get, create, update, delete)
+- [x] `client/src/components/Layout.tsx` — Sidebar nav (Tasks, Ideas, Journal, Terminal)
+- [x] `client/src/App.tsx` — React Router setup with routes
+- [x] `client/src/components/tasks/TaskBoard.tsx` — Columns: Backlog, In Progress, Done (filtered by kind=task)
+- [x] `client/src/components/tasks/TaskCard.tsx` — Task display with status change buttons
+- [x] `client/src/components/tasks/TaskForm.tsx` — Create/edit task modal
+- [x] `client/src/components/ideas/IdeaList.tsx` — List items where kind=idea
+- [x] `client/src/components/ideas/IdeaCard.tsx` — Single idea display
+- [x] `client/src/components/ideas/IdeaForm.tsx` — Create/edit idea
+- [x] "Promote to Task" action — calls `POST /api/items/:id/promote`
+- [x] **Verify**: Create/edit/delete tasks and ideas through the UI, refresh to confirm persistence. Open a file in external editor, change it, refresh UI to see update.
 
 ## Phase 3: Journal/Notes
 
