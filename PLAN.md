@@ -217,7 +217,7 @@ Single unified resource with filtering:
 - [x] Minimal CSS styling
 - [x] Loading states and error handling in UI
 - [x] Graceful tmux session cleanup on server shutdown
-- [ ] **Verify**: Full e2e flow — create idea → promote to task → delegate → interact → mark done
+- [x] **Verify**: Full e2e flow — create idea → promote to task → delegate → interact → mark done
 
 ## Phase 6: External Editor Integration
 
