@@ -190,11 +190,11 @@ Single unified resource with filtering:
 - [x] "Promote to Task" action — calls `POST /api/items/:id/promote`
 - [x] **Verify**: Create/edit/delete tasks and ideas through the UI, refresh to confirm persistence. Open a file in external editor, change it, refresh UI to see update.
 
-## Phase 3: Journal/Notes
+## Phase 3: Journal/Notes ✅
 
-- [ ] `client/src/components/journal/JournalEditor.tsx` — Markdown textarea + live preview
-- [ ] `client/src/components/journal/JournalList.tsx` — Timeline view with search/tag filter
-- [ ] `client/src/components/journal/JournalEntry.tsx` — Render single markdown entry
+- [x] `client/src/components/journal/JournalEditor.tsx` — Markdown textarea + live preview
+- [x] `client/src/components/journal/JournalList.tsx` — Timeline view with search/tag filter
+- [x] `client/src/components/journal/JournalEntry.tsx` — Render single markdown entry
 - [ ] **Verify**: Create journal entries, search works, markdown renders, timeline sorts by date
 
 ## Phase 4: tmux + Terminal
