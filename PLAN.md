@@ -210,14 +210,14 @@ Single unified resource with filtering:
 - [x] "Delegate" button on TaskCard that triggers delegation flow
 - [x] **Verify**: Delegate task → tmux spawns → embedded terminal shows Claude → can type in it
 
-## Phase 5: Polish
+## Phase 5: Polish ✅
 
-- [ ] Tag filtering across all views
-- [ ] Session status indicators (running/stopped) on task cards
-- [ ] Minimal CSS styling
-- [ ] Loading states and error handling in UI
-- [ ] Graceful tmux session cleanup on server shutdown
-- [ ] **Verify**: Full e2e flow — create idea → promote to task → delegate → interact → mark done
+- [x] Tag filtering across all views
+- [x] Session status indicators (running/stopped) on task cards
+- [x] Minimal CSS styling
+- [x] Loading states and error handling in UI
+- [x] Graceful tmux session cleanup on server shutdown
+- [x] **Verify**: Full e2e flow — create idea → promote to task → delegate → interact → mark done
 
 ## Phase 6: External Editor Integration
 

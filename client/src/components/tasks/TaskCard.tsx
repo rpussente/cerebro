@@ -2,6 +2,7 @@ import type { TaskItem, TaskStatus } from "../../../../shared/types.js";
 
 interface Props {
   task: TaskItem;
+  sessionActive: boolean;
   onStatusChange: (id: string, status: TaskStatus) => void;
   onEdit: (task: TaskItem) => void;
   onDelete: (id: string) => void;
@@ -15,7 +16,7 @@ const statusTransitions: Record<TaskStatus, TaskStatus[]> = {
   done: ["backlog"],
 };
 
-export default function TaskCard({ task, onStatusChange, onEdit, onDelete, onDelegate }: Props) {
+export default function TaskCard({ task, sessionActive, onStatusChange, onEdit, onDelete, onDelegate }: Props) {
   const canDelegate = task.status === "backlog";
 
   return (
@@ -30,8 +31,19 @@ export default function TaskCard({ task, onStatusChange, onEdit, onDelete, onDel
     >
       <div style={{ fontWeight: 600, marginBottom: "0.25rem" }}>{task.title}</div>
       {task.tmuxSession && (
-        <div style={{ fontSize: "0.75rem", color: "#8c8", marginBottom: "0.25rem" }}>
-          session: {task.tmuxSession}
+        <div style={{ fontSize: "0.75rem", marginBottom: "0.25rem", display: "flex", alignItems: "center", gap: 6 }}>
+          <span
+            style={{
+              display: "inline-block",
+              width: 8,
+              height: 8,
+              borderRadius: "50%",
+              background: sessionActive ? "#4c4" : "#844",
+            }}
+          />
+          <span style={{ color: sessionActive ? "#8c8" : "#c88" }}>
+            {task.tmuxSession} ({sessionActive ? "running" : "stopped"})
+          </span>
         </div>
       )}
       {task.body && (
