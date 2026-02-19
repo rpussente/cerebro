@@ -1,11 +1,12 @@
 import { useState, useCallback } from "react";
 import type { TaskItem, TaskStatus } from "../../../../shared/types.js";
-import { listItems, createItem, updateItem, deleteItem } from "../../api/items.js";
+import { listItems, createItem, updateItem, deleteItem, delegateItem } from "../../api/items.js";
 import TaskCard from "./TaskCard.js";
 import TaskForm from "./TaskForm.js";
 
 const columns: { status: TaskStatus; label: string }[] = [
   { status: "backlog", label: "Backlog" },
+  { status: "delegated", label: "Delegated" },
   { status: "in-progress", label: "In Progress" },
   { status: "done", label: "Done" },
 ];
@@ -78,6 +79,15 @@ export default function TaskBoard() {
     }
   };
 
+  const handleDelegate = async (id: string) => {
+    try {
+      await delegateItem(id);
+      await refresh();
+    } catch (e) {
+      console.error("Failed to delegate task:", e);
+    }
+  };
+
   const handleClose = () => {
     setShowForm(false);
     setEditingTask(null);
@@ -132,6 +142,7 @@ export default function TaskBoard() {
                   onStatusChange={handleStatusChange}
                   onEdit={handleEdit}
                   onDelete={handleDelete}
+                  onDelegate={handleDelegate}
                 />
               ))}
           </div>

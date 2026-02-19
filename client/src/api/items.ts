@@ -66,3 +66,9 @@ export async function promoteItem(id: string): Promise<Item> {
   if (!res.ok) throw new Error(`Failed to promote item: ${res.status}`);
   return res.json();
 }
+
+export async function delegateItem(id: string): Promise<Item> {
+  const res = await fetch(`${BASE}/${id}/delegate`, { method: "POST" });
+  if (!res.ok) throw new Error(`Failed to delegate item: ${res.status}`);
+  return res.json();
+}

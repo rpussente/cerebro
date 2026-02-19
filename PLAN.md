@@ -197,18 +197,18 @@ Single unified resource with filtering:
 - [x] `client/src/components/journal/JournalEntry.tsx` — Render single markdown entry
 - [x] **Verify**: Create journal entries, search works, markdown renders, timeline sorts by date
 
-## Phase 4: tmux + Terminal
+## Phase 4: tmux + Terminal ✅
 
-- [ ] `server/src/services/tmuxManager.ts` — Spawn/list/kill `mf-*` tmux sessions
-- [ ] `server/src/routes/tmux.ts` — REST endpoints for tmux session management
-- [ ] Delegation endpoint (`POST /api/items/:id/delegate`) in items route
-- [ ] `server/src/ws/terminalHandler.ts` — WebSocket ↔ node-pty ↔ tmux bridge
-- [ ] Wire WebSocket upgrade handler in `server/src/index.ts`
-- [ ] `client/src/hooks/useTerminal.ts` — xterm.js + WebSocket lifecycle hook
-- [ ] `client/src/components/terminal/TerminalPanel.tsx` — xterm.js container
-- [ ] `client/src/components/terminal/SessionPicker.tsx` — Dropdown to pick active session
-- [ ] "Delegate" button on TaskCard that triggers delegation flow
-- [ ] **Verify**: Delegate task → tmux spawns → embedded terminal shows Claude → can type in it
+- [x] `server/src/services/tmuxManager.ts` — Spawn/list/kill `mf-*` tmux sessions
+- [x] `server/src/routes/tmux.ts` — REST endpoints for tmux session management
+- [x] Delegation endpoint (`POST /api/items/:id/delegate`) in items route
+- [x] `server/src/ws/terminalHandler.ts` — WebSocket ↔ node-pty ↔ tmux bridge
+- [x] Wire WebSocket upgrade handler in `server/src/index.ts`
+- [x] `client/src/hooks/useTerminal.ts` — xterm.js + WebSocket lifecycle hook
+- [x] `client/src/components/terminal/TerminalPanel.tsx` — xterm.js container
+- [x] `client/src/components/terminal/SessionPicker.tsx` — Dropdown to pick active session
+- [x] "Delegate" button on TaskCard that triggers delegation flow
+- [x] **Verify**: Delegate task → tmux spawns → embedded terminal shows Claude → can type in it
 
 ## Phase 5: Polish
 
